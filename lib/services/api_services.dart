@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_topics/Data/passenger_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,7 +11,9 @@ class ApiServices {
 
     var response = await http.get(Uri.parse(mainUrl));
     if (response.statusCode != 200) {
-      print("error ${response.statusCode}");
+      if (kDebugMode) {
+        print("error ${response.statusCode}");
+      }
     }
     var data = jsonDecode(response.body);
     PassengerModel passengers = PassengerModel.fromJson(data);

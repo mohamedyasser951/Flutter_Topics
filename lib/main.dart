@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_topics/Data/passenger_model.dart';
 import 'package:flutter_topics/home_screen.dart';
 
 void main()async {
